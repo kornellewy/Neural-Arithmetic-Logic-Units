@@ -18,7 +18,7 @@ class NeuralAccumulatorCell(nn.Module):
 
     """
     def __init__(self, in_dim, out_dim):
-        super().__intt__()
+        super().__init__()
         self.in_dim = in_dim
         self.out_dim = out_dim
 

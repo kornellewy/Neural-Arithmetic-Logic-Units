@@ -2,7 +2,7 @@ import math
 import torch.nn as nn
 from .utils import str2act
 
-class MPL(nn.Module):
+class MLP(nn.Module):
     """A Multi-Layer Perceptron (MLP).
     Also known as a Fully-Connected Network (FCN). This
     implementation assumes that all hidden layers have
@@ -49,7 +49,7 @@ class MPL(nn.Module):
                 bound = 1 / mah.sqrt(fan_in)
                 nn.init.uniform_(m.bias, -bound, bound)
 
-    del _layer(self, in_dim, out_dim, activation=True):
+    def _layer(self, in_dim, out_dim, activation=True):
         if activation:
             return [
                 nn.Linear(in_dim, out_dim),
